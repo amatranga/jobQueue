@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "build:watch": "webpack --watch",
+    "start": "node index.js",
+    "start:watch": "nodemon index.js",
+    "test": "lab -a code -t 100 -L -v & mocha src/test/*.spec.js",
+    "test:frontend": "mocha src/test/*.spec.js",
+    "test:server": "lab -a code -t 100 L -v"
   },
   "author": "amatranga",
   "license": "ISC",
@@ -20,5 +26,12 @@
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "webpack": "^3.8.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "code": "^5.1.2",
+    "enzyme": "^3.2.0",
+    "lab": "^15.1.2",
+    "mocha": "^4.0.1"
   }
 }
