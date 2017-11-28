@@ -1,1 +1,3 @@
 /node_modules
+/dist/frontend/bundle.js
+/dist/frontend/bundle.js.map
