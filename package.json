@@ -8,9 +8,9 @@
     "build:watch": "webpack --watch",
     "start": "node index.js",
     "start:watch": "nodemon index.js",
-    "test": "lab -a code -t 100 -L -v & mocha src/test/*.spec.js",
+    "test": "lab -a code -t 100 -v & mocha src/test/*.spec.js",
     "test:frontend": "mocha src/test/*.spec.js",
-    "test:server": "lab -a code -t 100 L -v"
+    "test:server": "lab -a code -t 100 -L -v"
   },
   "author": "amatranga",
   "license": "ISC",
@@ -31,6 +31,9 @@
     "chai": "^4.1.2",
     "code": "^5.1.2",
     "enzyme": "^3.2.0",
+    "eslint": "^4.12.0",
+    "eslint-config-hapi": "^11.1.0",
+    "eslint-plugin-hapi": "^4.1.0",
     "lab": "^15.1.2",
     "mocha": "^4.0.1"
   }
