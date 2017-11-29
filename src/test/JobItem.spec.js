@@ -10,7 +10,7 @@ describe('JobItem component', () => {
     waitTime: '12345ms',
     jobNumber: '1',
     _endTime: '2017-11-28T02:00:12.345Z'
-  }
+  };
   const wrapper = shallow(<JobItem job={sampleJob} />);
 
   it('should contain a name element', () => {
