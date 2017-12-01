@@ -2,9 +2,9 @@ const webpack = require('webpack');
 const path = require('path');
 
 const config = {
-  entry: './src/main/frontend/index.jsx',
+  entry: './src/main/frontend/JobQueue.jsx',
   output: {
-    path: path.join(__dirname, 'dist/frontend'),
+    path: path.join(__dirname, 'public/dist'),
     filename: 'bundle.js'
   },
   module: {
