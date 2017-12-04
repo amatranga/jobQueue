@@ -2,8 +2,7 @@
 
 const Path = require('path');
 const Hapi = require('hapi');
-const HapiReactViews = require('hapi-react-views');
-const Vision = require('vision');
+const Inert = require('inert');
 
 require('babel-register')({
   presets: ['es2015', 'react'],
@@ -11,27 +10,28 @@ require('babel-register')({
 
 const server = new Hapi.Server({
   port: 3000,
-  host: 'localhost'
+  host: 'localhost',
 });
 
 const hapiServer = async () => {
-  await server.register(Vision);
-
-  server.views({
-    engines: { jsx: HapiReactViews },
-    relativeTo: __dirname,
-    path: '../src/main/frontend'
-  });
+  await server.register(Inert);
 
   server.route({
     method: 'GET',
     path: '/{param*}',
-    handler: (req, h) => {
-      return h.view('JobQueue');
+    handler: {
+      directory: {
+        path: Path.join(__dirname, '../public'),
+        index: true
+      }
     }
   });
 
-  await server.start();
+  await server.start(err => {
+    if (err) {
+      throw err;
+    }
+  });
   console.log(`Server running at ${server.info.uri}`);
 };
 
