@@ -31,9 +31,9 @@ class JobQueue extends React.Component {
     this.setState(allJobs);
   }
 
-  delete(id) {
+  delete(job) {
     this.setState(prevState => ({
-      allJobs: prevState.allJobs.filter(el => el.jobNumber !== id.jobNumber)
+      allJobs: prevState.allJobs.filter(el => JSON.stringify(el) !== JSON.stringify(job))
     }));
   }
 
