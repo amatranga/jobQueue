@@ -61,15 +61,16 @@ class AddJob extends React.Component {
       );
     } else {
       return (
-        <form>
+        <form className="tooltip">
           <label>Job Description:</label>
-          <input className="job-input" type="text" name="description" value={this.state.name} onChange={this.handleChange} required />
+          <input className="job-input" type="text" name="description" value={this.state.name} onChange={this.handleChange} disabled />
           <button
             className="submit button disabled"
             data-tooltip="Unpause the queue with the Pause button to add a job"
             disabled="true">
             Submit
           </button>
+          <p className="tooltip-text">Restart the queue before adding a job</p>
         </form>
       );
     }
