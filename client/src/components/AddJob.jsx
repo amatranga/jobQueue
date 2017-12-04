@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 
 class AddJob extends React.Component {
   constructor(props) {

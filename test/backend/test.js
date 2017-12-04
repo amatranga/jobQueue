@@ -12,7 +12,7 @@ const expect = Code.expect;
 const it = lab.test;
 
 describe('Basic server', () => {
-  const server = require('../../index');
+  const server = require('../../server/index');
   it('Returns 200 OK for GET requests to /', async() => {
     const options = {
       method: 'GET',

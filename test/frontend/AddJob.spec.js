@@ -1,7 +1,8 @@
 import React from 'react';
+import { describe } from 'mocha';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import AddJob from '../src/components/AddJob';
+import AddJob from '../../client/src/components/AddJob';
 
 describe('AddJob component', () => {
   const wrapper = shallow(<AddJob />);
